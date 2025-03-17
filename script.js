@@ -24,4 +24,13 @@ document.addEventListener('DOMContentLoaded', function () {
         document.body.style.fontSize = `${tamanhoAtualFonte}rem`
 
     })
-})
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    const menuToggle = document.getElementById('menu-toggle');
+    const navMenu = document.querySelector('.nav');
+
+    menuToggle.addEventListener('click', function () {
+        navMenu.classList.toggle('show');
+    });
+});
