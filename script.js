@@ -28,9 +28,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
 document.addEventListener('DOMContentLoaded', function () {
     const menuToggle = document.getElementById('menu-toggle');
-    const navMenu = document.querySelector('.nav');
+    const menu = document.getElementById('menu');
 
     menuToggle.addEventListener('click', function () {
-        navMenu.classList.toggle('show');
+        menu.classList.toggle('active');
+    });
+
+    // Fechar o menu ao clicar fora dele
+    document.addEventListener('click', function (event) {
+        if (!menu.contains(event.target) && !menuToggle.contains(event.target)) {
+            menu.classList.remove('active');
+        }
     });
 });
