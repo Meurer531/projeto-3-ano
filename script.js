@@ -34,6 +34,3 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 
-function toggleHighContrast() {
-    document.body.classList.toggle('alto-contraste');
-}
