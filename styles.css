@@ -3,7 +3,10 @@
 
 :root {
     --laranja-claro: #FF862A;
- }
+    --alto-contraste-fundo: #000000;
+    --alto-contraste-texto: #ffffff;
+    --alto-contraste-link: #ffd700;
+}
 
 body {
     font-size: 1rem;
@@ -143,6 +146,7 @@ h2 {
     right:20px;
     z-index: 1000;
 }
+
 .rotacao-botao{
     transform: rotate(-90deg);
     transform-origin: right center;
@@ -161,52 +165,36 @@ h2 {
     display: none;
 }
 
-/* Estilos para o menu */
-#menu {
-    display: none; /* Inicialmente oculto */
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #ffffff;
-    padding: 1rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
+.alto-contraste{
+    background-color: var(--alto-contraste-fundo);
+    color: var(--alto-contraste-texto);
 }
 
-#menu.active {
-    display: flex; /* Exibe o menu quando a classe 'active' é adicionada */
+.alto-contraste header,
+.alto-contraste footer,
+.alto-contraste .formulario{
+    background-color: var(--alto-contraste-fundo);
+    color: var(--alto-contraste-texto);
 }
 
-/* Estilos para o botão de menu */
-.menu-toggle {
+.alto-contraste .nav-link{
+    color: var(--alto-contraste-link);
+}
+
+.alto-contraste .botao-inicio,
+.alto-contraste .formulario button,
+.alto-contraste .btn-primary{
+    background-color: var(--alto-contraste-link);
+    color: var(--alto-contraste-fundo)
+}
+
+.alto-contraste #tropicalia {
     background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
-.menu-toggle img {
-    width: 24px;
-    height: 24px;
+.alto-contraste #galeria {
+    background-color: var(--alto-contraste-fundo);
 }
-
-/* Animação do menu */
-@keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-#menu.active {
-    animation: slideIn 0.3s ease-out;
+.alto-contraste .fundo-galeria {
+    background: none;
 }
