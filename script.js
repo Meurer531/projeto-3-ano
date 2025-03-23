@@ -33,3 +33,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 });
+
+document.addEventListener("scroll", function () {
+    let parallaxElements = document.querySelectorAll(".parallax img");
+    let scrollPosition = window.scrollY;
+
+    parallaxElements.forEach((element, index) => {
+        let speed = 0.3 + index * 0.1;
+        element.style.transform = `translateY(${scrollPosition * speed}px)`;
+    });
+});
