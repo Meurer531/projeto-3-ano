@@ -6,10 +6,12 @@ document.addEventListener('DOMContentLoaded', function () {
         botaoDeAcessibilidade.classList.toggle('rotacao-botao');
         opcoesDeAcessibilidade.classList.toggle('apresenta-lista')
 
-    })
+    });
 
     const aumentaFonteBotao = document.getElementById('aumentar-fonte');
     const diminuiFonteBotao = document.getElementById('diminuir-fonte');
+
+    const alternaContraste = document.getElementById('alterna-contraste')
 
     let tamanhoAtualFonte = 1;
 
@@ -17,27 +19,17 @@ document.addEventListener('DOMContentLoaded', function () {
         tamanhoAtualFonte += 0.1;
         document.body.style.fontSize = `${tamanhoAtualFonte}rem`
 
-    })
+    });
 
     diminuiFonteBotao.addEventListener('click', function () {
         tamanhoAtualFonte -= 0.1;
         document.body.style.fontSize = `${tamanhoAtualFonte}rem`
 
-    })
-});
-
-document.addEventListener('DOMContentLoaded', function () {
-    const menuToggle = document.getElementById('menu-toggle');
-    const menu = document.getElementById('menu');
-
-    menuToggle.addEventListener('click', function () {
-        menu.classList.toggle('active');
     });
 
-    // Fechar o menu ao clicar fora dele
-    document.addEventListener('click', function (event) {
-        if (!menu.contains(event.target) && !menuToggle.contains(event.target)) {
-            menu.classList.remove('active');
-        }
+    alternaContraste.addEventListener('click', function () {
+        document.body.classList.toggle('alto-contraste')
     });
+
+
 });
